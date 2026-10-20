@@ -154,3 +154,38 @@ a {
     font-family: Dancing Script;
     font-size: 55px;
 }
+
+li a i { /* icons scale */
+    font-size: 20px;
+}
+
+.CTA {
+    background-color: rgba(223,161,76, 0.75);
+    color: #fff;
+    margin: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.CTA:hover {
+    transform: scale(1.10);
+    background-color: rgba(223,161,76, 1);
+    cursor: pointer;
+}
+
+.image-card {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10%;
+}
+
+.logo-img {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-card:hover .logo-img {
+    transform: scale(1.05);
+}
+/* css cua test.html */
