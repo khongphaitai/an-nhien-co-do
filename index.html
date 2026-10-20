@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ | An Nhiên Cố Đô</title>
     <link rel="icon" type="image/png" href="image/favicon-removebg-preview.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,11 +19,11 @@
                     <img src="image/logo_new.png" alt="An Nhiên Cố Đô" class="logo-img" width="55px" height="55px">
                 </a>
             </li>
-            <li class="nav-item"><a href="ve-chung-toi.html">Về chúng tôi</a></li>
-            <li class="nav-item"><a href="san-pham.html">Sản phẩm</a></li>
-            <li class="nav-item"><a href="bo-suu-tap.html">Bộ sưu tập</a></li>
-            <li class="nav-item"><a href="qua-tang.html">Quà tặng</a></li>
-            <li class="nav-item"><a href="goc-an-nhien.html">Góc An Nhiên</a></li>
+            <li class="nav-item hide-on-mobile"><a href="ve-chung-toi.html">Về chúng tôi</a></li>
+            <li class="nav-item hide-on-mobile"><a href="san-pham.html">Sản phẩm</a></li>
+            <li class="nav-item hide-on-mobile"><a href="bo-suu-tap.html">Bộ sưu tập</a></li>
+            <li class="nav-item hide-on-mobile"><a href="qua-tang.html">Quà tặng</a></li>
+            <li class="nav-item hide-on-mobile"><a href="goc-an-nhien.html">Góc An Nhiên</a></li>
     
             <li class="nav-item search-start">
                 <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -36,12 +34,15 @@
             <li class="nav-item">
                 <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown hide-on-mobile">
                 <a href="#"><i class="fa-solid fa-language"></i></a>
                 <div class="content">
                     <a href="#">Việt</a>
                     <a href="#">Anh</a>
                 </div>
+            </li>
+            <li class="nav-item menu-toggle">
+                <a href="#"><i class="fa-solid fa-bars"></i></a>
             </li>
         </ul>
     </div>
@@ -69,5 +70,33 @@
         </div>
     </section>
 
+    <!-- menu cho dt -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-header">
+            <img src="image/logo.jpg" alt="Logo" width="45" height="55">
+            <button class="close-btn" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="sidebar-nav">
+            <li>
+                <a href="ve-chung-toi.html">Về chúng tôi</a>
+            </li>
+            <li>
+                <a href="san-pham.html">Sản phẩm</a>
+            </li>
+            <li>
+                <a href="bo-suu-tap.html">Bộ sưu tập</a>
+            </li>
+            <li>
+                <a href="qua-tang.html">Quà tặng</a>
+            </li>
+            <li>
+                <a href="goc-an-nhien.html">Góc An Nhiên</a></li>
+            <li style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+                <a href="#"><i class="fa-solid fa-language"></i> Ngôn ngữ (VN)</a>
+            </li>
+        </ul>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>

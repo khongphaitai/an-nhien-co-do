@@ -29,7 +29,7 @@ body {
     background-color: transparent; 
     width: 100%;
     height: 80px; 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -259,4 +259,180 @@ li a i {
 .btn-outline:hover {
     background-color: var(--primary-gold);
     color: #fff;
+}
+
+/* --- NÚT MENU (Ẩn trên máy tính) --- */
+.menu-toggle {
+    display: none !important;
+}
+
+/* --- SIDEBAR MENU STYLE --- */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    width: 260px;
+    height: 100vh;
+    background-color: var(--bg-light); 
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 2000; 
+    transition: right 0.4s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu.active {
+    right: 0; 
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--primary-gold);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 8px;
+}
+
+.sidebar-nav li a {
+    display: block; 
+    width: 100%;
+    padding: 14px 16px;
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 6px;
+}
+
+.sidebar-nav li a:hover {
+    background-color: rgba(223, 161, 76, 0.12); 
+    color: var(--primary-gold-hover);
+    padding-left: 20px;
+}
+
+/* LỚP PHỦ TỐI NỀN (OVERLAY) */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 1500; /* Nằm dưới sidebar nhưng trên website */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- RESPONSIVE CHO DI ĐỘNG --- */
+@media screen and (max-width: 768px) {
+    /* Hiện nút Menu 3 gạch */
+    .menu-toggle {
+        display: flex !important;
+    }
+    
+    /* Ẩn các mục chữ đi để không bị tràn thanh điều hướng */
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
+/* --- RESPONSIVE CHO DI ĐỘNG (Dưới 768px) --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        height: 70px;
+    }
+
+    .navbar .nav-item a {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+
+    .logo-img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    #big_heading {
+        font-size: 38px !important;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    #small_heading {
+        font-size: 32px !important;
+        margin-bottom: 10px;
+    }
+
+    .title {
+        width: 90%;
+        padding: 0 10px;
+    }
+
+    .CTA {
+        padding: 12px 24px;
+        font-size: 14px;
+        margin: 15px 0 0 0;
+    }
+
+    .brand-story-preview {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 28px !important;
+    }
+
+    .section-desc {
+        font-size: 15px;
+    }
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI RẤT NHỎ (Dưới 480px) --- */
+@media screen and (max-width: 480px) {
+    /* Ẩn các chữ menu văn bản phức tạp, chỉ giữ lại Logo và các Icon chính nếu muốn giao diện cực kỳ tối giản */
+    .navbar .nav-item:not(.search-start):not(.dropdown) {
+        display: none; 
+    }
+
+    #big_heading {
+        font-size: 30px !important;
+    }
+
+    #small_heading {
+        font-size: 26px !important;
+    }
 }
