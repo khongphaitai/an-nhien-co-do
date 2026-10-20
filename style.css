@@ -1,0 +1,262 @@
+/* --- Cấu trúc chung --- */
+:root {
+    --primary-gold: #dfa14c;
+    --primary-gold-hover: #c98d02;
+    --dark-overlay: rgba(0, 0, 0, 0.35);
+    --text-dark: #333333;
+    --bg-light: #fbfbf9; /* Màu nền kem sữa cho các section sau */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden; 
+    background-color: var(--bg-light);
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0 30px; 
+    margin: 0;
+    background-color: transparent; 
+    width: 100%;
+    height: 80px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .nav-item {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    height: 100%; 
+}
+
+.navbar .nav-item a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    padding: 0 18px; /* Tinh chỉnh nhẹ lại padding để chứa đủ các mục mới */
+    color: #fff;
+    text-decoration: none;
+    z-index: 2; 
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 0; 
+    background-color: rgba(255, 255, 255, 0.25); 
+    transition: height 0.2s ease-in-out; 
+    z-index: 1; 
+}
+
+.navbar .nav-item:hover::before {
+    height: 100%; 
+}
+
+.search-start {
+    margin-left: auto; 
+}
+
+a {
+    text-decoration: none;
+    color: #fff; 
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff; 
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    min-width: 120px;
+    z-index: 1;
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+.dropdown .content a {
+    padding: 10px 15px;
+    display: block;
+    color: var(--primary-gold-hover); 
+    white-space: nowrap;
+}
+
+.dropdown .content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .content {
+    display: flex;
+}
+
+/* --- ẢNH NỀN & HERO SECTION --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.hero_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0; 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-overlay); 
+    z-index: 1; 
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: #fff;
+    z-index: 2; 
+}
+
+#big_heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    -webkit-text-stroke: 0.75px #000000;
+    font-weight: 500;
+    line-height: 150%;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.45);
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+#small_heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+li a i { 
+    font-size: 18px; /* Tinh chỉnh lại kích thước icon cho cân đối */
+}
+
+.CTA {
+    background-color: rgba(223,161,76, 0.85); /* Tăng nhẹ độ đậm mặc định */
+    color: #fff;
+    margin: 20px;
+    padding: 15px 30px;
+    border: none;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    border-radius: 4px; /* Chuyển về bo góc nhẹ nhàng, sang trọng hơn */
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.CTA:hover {
+    transform: translateY(-3px); /* Thay vì scale, dùng translateY để tạo hiệu ứng thanh lịch hơn */
+    background-color: rgba(223,161,76, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.image-card {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10%;
+}
+
+.logo-img {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-card:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* --- SECTION MẪU: CÂU CHUYỆN THƯƠNG HIỆU --- */
+.brand-story-preview {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.story-content {
+    max-width: 800px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.title-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--primary-gold);
+    margin: 0 auto 30px auto;
+}
+
+.section-desc {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-gold);
+    color: #fff;
+}
